@@ -1,0 +1,42 @@
+#!/bin/bash
+
+URL=$1
+CDIR=$2
+
+
+# get current time in hh:mm:ss format in bash redhat
+current_time_before=$(date "+%Y.%m.%d-%H.%M.%S")
+echo "Current Time Before: $current_time_before"
+
+# get current time in seconds
+current_time_seconds_before=$(date +%s)
+
+mkdir -p $CDIR
+cd $CDIR
+
+pwd
+svn2git $URL --verbose --metadata &&
+ls -alh
+
+current_time_after=$(date "+%Y.%m.%d-%H.%M.%S")
+echo "Current Time After : $current_time_after"
+
+current_time_seconds_after=$(date +%s)
+
+
+
+# Show time difference between $current_time_before and $current_time_after in hh:mm:ss format
+diff=$(echo "$current_time_seconds_after - $current_time_seconds_before" | bc)
+echo "diff : $diff" 
+
+# Convert seconds to hours, minutes and seconds
+hours=$(($diff / 3600))
+diff=$(($diff % 3600))
+minutes=$(($diff / 60))
+seconds=$(($diff % 60))
+
+echo "Total RUN: $hours:$minutes:$seconds" &&
+
+
+
+
