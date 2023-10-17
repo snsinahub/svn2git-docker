@@ -12,7 +12,7 @@ RUN ls -la /etc/yum.repos.d/
 # RUN rm -f /etc/yum.repos.d/ubi.repo
 # RUN yum update -y
 RUN yum install --nogpgcheck -y git-core git-svn ruby
-RUN gem install svn2git
+RUN gem install svn2git3
 
 COPY ./svnToGit /app
 
