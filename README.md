@@ -44,5 +44,9 @@ git remote add origin url
 git push -u origin main          
 
 ```
+
+## Known issues
+- for some reason sometimes this may happen when trying to enter a password for `svn2git` command: The issue `Keeps on asking Password and then dies`
+  - Here is the solution: `I have this issue. I figured out that you need to press ENTER once first, nothing will happen, and then you can type your password and press ENTER again. For some reason, it does not read the input as soon as the prompt appears.` source: [Keeps on asking Password and then dies](https://github.com/nirvdrum/svn2git/issues/280)
 ## External links
 [svn2git](https://github.com/nirvdrum/svn2git)
