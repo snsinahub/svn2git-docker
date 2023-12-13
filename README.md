@@ -42,7 +42,7 @@ git commit -m "Initial commit"
 git branch -M main
 git remote add origin url
 git push -u origin main          
-
+git config --global push.followTags true
 ```
 
 ## Known issues
